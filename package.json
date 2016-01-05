@@ -1,0 +1,22 @@
+{
+  "name": "pouchdbwebworkers",
+  "version": "1.0.0",
+  "description": "PouchDB Web Workers Examples",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bhanuc/pouchdb-worker.git"
+  },
+  "author": "bhanuc",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bhanuc/pouchdb-worker/issues"
+  },
+  "homepage": "https://github.com/bhanuc/pouchdb-worker#readme",
+  "dependencies": {
+    "pouchdb": "^5.1.0"
+  }
+}
