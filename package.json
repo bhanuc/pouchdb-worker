@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/bhanuc/pouchdb-worker#readme",
   "dependencies": {
-    "pouchdb": "^5.1.0"
+    "pouchdb": "^5.1.0",
+    "worker-pouch": "^1.0.0"
   }
 }
