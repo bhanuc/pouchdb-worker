@@ -1,8 +1,8 @@
-self.importScripts('../node_modules/pouchdb/dist/pouchdb.min.js');
-
+// import * from "../node_modules/pouchdb/dist/pouchdb.js";
+var PouchDB = require('../../node_modules/pouchdb/dist/pouchdb.js');
 var db = new PouchDB('workers');
 
-self.onmessage = function(dbEvent) {
+onmessage = function(dbEvent) {
     var data = dbEvent.data;
     switch (data.msg) {
         case 'CREATE':
