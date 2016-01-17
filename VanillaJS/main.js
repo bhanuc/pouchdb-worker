@@ -13,9 +13,8 @@
 
                         alert("You need to enter a goal first.");
 
-                    }
-                    else {
-                        PouchWorker.postMessage({
+                    } else {
+                        pouchWorker.postMessage({
                             "msg": "CREATE",
                             "todo": userInput
                         });
@@ -31,7 +30,7 @@
                 },
                 removeTask = function() {
                     var id = this.id;
-                    PouchWorker.postMessage({
+                    pouchWorker.postMessage({
                         "msg": "DELETE",
                         "id": id
                     });
@@ -39,9 +38,9 @@
             loadRemoveOptions();
             addButton.addEventListener("click", addTask, false);
 
-            var PouchWorker = new Worker("pouch-worker.js");
+            var pouchWorker = new Worker("pouch-worker.js");
 
-            PouchWorker.onmessage = function(dbEvent) {
+            pouchWorker.onmessage = function(dbEvent) {
                 var data = dbEvent.data;
                 switch (data.msg) {
                     case 'CREATE':
@@ -81,6 +80,4 @@
                         // code
                 }
             };
-
-
         }());

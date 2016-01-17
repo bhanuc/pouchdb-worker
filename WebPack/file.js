@@ -2,7 +2,7 @@
 var PouchDB = require('../node_modules/pouchdb/dist/pouchdb.js');
 var db = new PouchDB('workers');
 
-onmessage = function(dbEvent) {
+self.onmessage = function(dbEvent) {
     var data = dbEvent.data;
     switch (data.msg) {
         case 'CREATE':

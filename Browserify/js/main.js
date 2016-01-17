@@ -1,5 +1,5 @@
 var work = require('webworkify');
-var PouchWorker = work(require('./worker.js'));
+var pouchWorker = work(require('./worker.js'));
 
 var doc = document,
     notification = doc.getElementById("notice").classList,
@@ -15,9 +15,8 @@ var doc = document,
 
             alert("You need to enter a goal first.");
 
-        }
-        else {
-            PouchWorker.postMessage({
+        } else {
+            pouchWorker.postMessage({
                 "msg": "CREATE",
                 "todo": userInput
             });
@@ -33,7 +32,7 @@ var doc = document,
     },
     removeTask = function() {
         var id = this.id;
-        PouchWorker.postMessage({
+        pouchWorker.postMessage({
             "msg": "DELETE",
             "id": id
         });
@@ -42,7 +41,7 @@ loadRemoveOptions();
 addButton.addEventListener("click", addTask, false);
 
 
-PouchWorker.onmessage = function(dbEvent) {
+pouchWorker.onmessage = function(dbEvent) {
         var data = dbEvent.data;
         switch (data.msg) {
             case 'CREATE':
